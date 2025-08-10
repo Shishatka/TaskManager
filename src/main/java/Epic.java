@@ -1,28 +1,14 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class Epic extends Task{
-    public ArrayList<SubTask> subTasks = new ArrayList<>();
+    private final List<Integer> subTasksIds = new ArrayList<>();
 
-    public Epic(String name, String description, String status) {
-        super(name, description, status);
-        for (SubTask sub : subTasks) {
-            if (sub.getStatus().equals("NEW")) {
-                status = "NEW";
-            }
-            else {
-                status = "IN_PROGRESS";
-                break;
-            }
-        }
+    public Epic(String name, String description) {
+        super(name, description);
+    }
 
-        for (SubTask sub : subTasks) {
-            if (sub.getStatus().equals("DONE")) {
-                status = "DONE";
-            }
-            else {
-                status = "IN_PROGRESS";
-                break;
-            }
-        }
+    public List<Integer> getSubtasksIds() {
+        return subTasksIds;
     }
 }

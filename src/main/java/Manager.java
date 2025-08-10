@@ -1,33 +1,46 @@
 import javax.xml.namespace.QName;
 import java.util.ArrayList;
+import java.util.List;
 
-public class Manager {
-    private ArrayList<Task> tasks = new ArrayList<>();
+public abstract class Manager {
 
-    public ArrayList<Task> getTasks() {
-        return this.tasks;
+    List<Task> getTasks() {
+        return null;
     }
 
-    public void deleteAllTasks() {
-        tasks.clear();
+    void deleteAllTasks() {}
+
+    void deleteAllSubTasks() {}
+
+    void deleteAllEpics() {}
+
+    Task getById(int id) {
+        return null;
     }
 
-    public Task getById(int id) {
-        return tasks.get(id);
+    void addTask(Task task) {}
+
+    void addSubTask(SubTask task) {}
+
+    void addEpic(Epic task){}
+
+    void updateTask(Task task) {
     }
 
-    public void createNewTask(Task task) {
-        tasks.add(task);
+    void updateSubTask(Task task){
     }
 
-    public void refresh() {}
-
-    public void deleteById(int id) {
-        tasks.remove(id);
+    void updateEpic(Task task){
     }
 
-    public ArrayList<SubTask> getAllSubTasks(Epic ep) {
-        return ep.subTasks;
+    void deleteTask(int id) {}
+
+    void deleteEpic(int id) {}
+
+    void deleteSubTask(int id) {}
+
+    List<SubTask> getAllSubTasks(Epic ep) {
+        return null;
     }
 }
 

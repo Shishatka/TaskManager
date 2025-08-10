@@ -2,18 +2,24 @@ public class Task {
     private String name;
     private String description;
     private int id;
-    private String status;
-    private static int count = 0;
+    private Status status;
 
-    public Task(String name, String description, String status) {
+    public Task(String name, String description) {
         this.name = name;
         this.description = description;
-        this.id = count++;
-        this.status = status;
+        this.status = Status.NEW;
     }
 
     public String getName() {
         return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getDescription() {
@@ -24,7 +30,15 @@ public class Task {
         return id;
     }
 
-    public String getStatus() {
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
+    }
+
+    public Status getStatus() {
         return status;
     }
 
@@ -32,4 +46,6 @@ public class Task {
     public String toString() {
         return "name: " + name + "\ndescription: " + description + "\nstatus: " + status;
     }
+
+
 }
